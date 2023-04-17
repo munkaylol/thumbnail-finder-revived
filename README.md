@@ -1,6 +1,7 @@
 # Thumb Finder Revived
-**By normanlol
-Fixed and reuploaded by JackABoylol**
+**By normanlol**
+
+**Fixed and reuploaded by JackABoylol**
 
 > link
 
