@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>thumb-finder | yt thumbnail finder</title>
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1>thumb-finder</h1>
+        <p>Find archived thumbnails via <a href="https://archive.org/help/wayback_api.php">Archive.org's API</a>.</p>
+        <p><a href="https://github.com/JackABoylol/thumb-finder-revived">source code</a> - no attribution needed</p>
+        <div id="noScriptHide" style="display:none;">
+            <input autocomplete="off" id="urlInput" placeholder="Input URL or ID."><button onclick="getAll()">Retrieve URL</button>
+            <table>
+                <tr>
+                    <th>Image Server</th>
+                    <th>Availablity</th>
+                </tr>
+                <tr>
+                    <th>Main ("i")</th>
+                    <th id="i">...</th>
+                </tr>
+                <tr>
+                    <th>Alt 1 ("i2")</th>
+                    <th id="i2">...</th>
+                </tr>
+                <tr>
+                    <th>Alt 2 ("i3")</th>
+                    <th id="i3">...</th>
+                </tr>
+                <tr>
+                    <th>Alt 3 ("i4")</th>
+                    <th id="i4">...</th>
+                </tr>
+                <tr>
+                    <th>Alt 4 ("img")</th>
+                    <th id="img">...</th>
+                </tr>
+            </table>
+            <p>Once you found one that was archived, click on one of the blue "Archived" links and right click the image and save it!</p>
+        </div>
+        <noscript><b>This webapp requires JavaScript.</b></noscript>
+        <script src="app.js"></script>
+    </body>
+</html>

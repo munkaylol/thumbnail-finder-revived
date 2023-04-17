@@ -1,0 +1,27 @@
+body {
+    background:#d7d7d7;
+    color:black;
+    font-family:Helvetica,Arial,Verdana;
+}
+
+body * {
+    margin-top:0;
+    margin-bottom:5px;
+}
+
+input {
+    width:400px;
+}
+
+td,th {
+    border:1px solid black;
+    text-align:left;
+}
+
+th:nth-child(odd) {
+    width:130px;
+}
+
+th:nth-child(even) {
+    width:145px;
+}
