@@ -3,7 +3,7 @@
 
 **Fixed and reuploaded by JackABoylol**
 
-> Website: https://jackaboylol.github.io/thumb-finder-revived/
+> Website: https://munkaylol.github.io/thumb-finder-revived/
 
 > Original Website (Down): https://normanlol.github.io/thumb-finder/
 
