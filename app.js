@@ -9,7 +9,10 @@ function getAll() {
         "i4",
         "img"
     ];
-    var subdowmains_vi_webp = [
+    var subdowmainsi_vi_webp = [
+        "i-vi_webp"
+    ];
+    var subdowmainsi1_vi_webp = [
         "i1-vi_webp"
     ];
     var subdowmainsi2_vi_webp = [
@@ -29,9 +32,13 @@ function getAll() {
         document.getElementById(subdomains[a]).innerHTML = "Testing..."
         getThumbnail(subdomains[a])
     }
-    for (var a in subdowmains_vi_webp) {
-        document.getElementById(subdowmains_vi_webp[a]).innerHTML = "Testing..."
-        getViWebpThumbnail(subdowmains_vi_webp[a])
+    for (var a in subdowmainsi_vi_webp) {
+        document.getElementById(subdowmainsi_vi_webp[a]).innerHTML = "Testing..."
+        getiViWebpThumbnail(subdowmainsi_vi_webp[a])
+    }
+    for (var a in subdowmainsi1_vi_webp) {
+        document.getElementById(subdowmainsi1_vi_webp[a]).innerHTML = "Testing..."
+        geti1ViWebpThumbnail(subdowmainsi1_vi_webp[a])
     }
     for (var a in subdowmainsi2_vi_webp) {
         document.getElementById(subdowmainsi2_vi_webp[a]).innerHTML = "Testing..."
@@ -72,10 +79,31 @@ function getThumbnail(s) {
     }
 }
 
-function getViWebpThumbnail(s) {
+function getiViWebpThumbnail(s) {
     var xhr = new XMLHttpRequest();
     var id = getIDFromUrl(document.getElementById("urlInput").value);
     xhr.open("GET", "https://archive.org/wayback/available?url=https://" + "i" +".ytimg.com/" + "vi_webp" + "/" + id + "/*");
+    xhr.send();
+    xhr.onload = async function () {
+        try {
+            var json = JSON.parse(xhr.responseText);
+            if (json.archived_snapshots.closest !== undefined) {
+                document.getElementById(s).innerHTML = "<a href='" + json.archived_snapshots.closest.url + "'>Archived</a>"
+            } else {
+                document.getElementById(s).innerHTML = "Not Archived"
+            }
+        } catch (error) {
+            setTimeout(function() {
+                getThumbnail(s);
+            }, 3000)
+        }
+    }
+}
+
+function geti1ViWebpThumbnail(s) {
+    var xhr = new XMLHttpRequest();
+    var id = getIDFromUrl(document.getElementById("urlInput").value);
+    xhr.open("GET", "https://archive.org/wayback/available?url=https://" + "i1" +".ytimg.com/" + "vi_webp" + "/" + id + "/*");
     xhr.send();
     xhr.onload = async function () {
         try {
