@@ -8,10 +8,45 @@ function getAll() {
         "i4",
         "img"
     ];
+    var subdowmains_vi_webp = [
+        "i1-vi_webp"
+    ];
+    var subdowmainsi2_vi_webp = [
+        "i2-vi_webp"
+    ];
+    var subdowmainsi3_vi_webp = [
+        "i3-vi_webp"
+    ];
+    var subdowmainsi4_vi_webp = [
+        "i4-vi_webp"
+    ];
+    var subdowmainsimg_vi_webp = [
+        "img-vi_webp"
+    ]
     
     for (var a in subdomains) {
         document.getElementById(subdomains[a]).innerHTML = "Testing..."
         getThumbnail(subdomains[a])
+    }
+    for (var a in subdowmains_vi_webp) {
+        document.getElementById(subdowmains_vi_webp[a]).innerHTML = "Testing..."
+        getViWebpThumbnail(subdowmains_vi_webp[a])
+    }
+    for (var a in subdowmainsi2_vi_webp) {
+        document.getElementById(subdowmainsi2_vi_webp[a]).innerHTML = "Testing..."
+        geti2ViWebpThumbnail(subdowmainsi2_vi_webp[a])
+    }
+    for (var a in subdowmainsi3_vi_webp) {
+        document.getElementById(subdowmainsi3_vi_webp[a]).innerHTML = "Testing..."
+        geti3ViWebpThumbnail(subdowmainsi3_vi_webp[a])
+    }
+    for (var a in subdowmainsi4_vi_webp) {
+        document.getElementById(subdowmainsi4_vi_webp[a]).innerHTML = "Testing..."
+        geti4ViWebpThumbnail(subdowmainsi4_vi_webp[a])
+    }
+    for (var a in subdowmainsimg_vi_webp) {
+        document.getElementById(subdowmainsimg_vi_webp[a]).innerHTML = "Testing..."
+        getimgViWebpThumbnail(subdowmainsimg_vi_webp[a])
     }
 }
 
@@ -19,6 +54,111 @@ function getThumbnail(s) {
     var xhr = new XMLHttpRequest();
     var id = getIDFromUrl(document.getElementById("urlInput").value);
     xhr.open("GET", "https://archive.org/wayback/available?url=https://" + s +".ytimg.com/vi/" + id + "/*");
+    xhr.send();
+    xhr.onload = async function () {
+        try {
+            var json = JSON.parse(xhr.responseText);
+            if (json.archived_snapshots.closest !== undefined) {
+                document.getElementById(s).innerHTML = "<a href='" + json.archived_snapshots.closest.url + "'>Archived</a>"
+            } else {
+                document.getElementById(s).innerHTML = "Not Archived"
+            }
+        } catch (error) {
+            setTimeout(function() {
+                getThumbnail(s);
+            }, 3000)
+        }
+    }
+}
+
+function getViWebpThumbnail(s) {
+    var xhr = new XMLHttpRequest();
+    var id = getIDFromUrl(document.getElementById("urlInput").value);
+    xhr.open("GET", "https://archive.org/wayback/available?url=https://" + "i" +".ytimg.com/" + "vi_webp" + "/" + id + "/*");
+    xhr.send();
+    xhr.onload = async function () {
+        try {
+            var json = JSON.parse(xhr.responseText);
+            if (json.archived_snapshots.closest !== undefined) {
+                document.getElementById(s).innerHTML = "<a href='" + json.archived_snapshots.closest.url + "'>Archived</a>"
+            } else {
+                document.getElementById(s).innerHTML = "Not Archived"
+            }
+        } catch (error) {
+            setTimeout(function() {
+                getThumbnail(s);
+            }, 3000)
+        }
+    }
+}
+
+function geti2ViWebpThumbnail(s) {
+    var xhr = new XMLHttpRequest();
+    var id = getIDFromUrl(document.getElementById("urlInput").value);
+    xhr.open("GET", "https://archive.org/wayback/available?url=https://" + "i2" +".ytimg.com/" + "vi_webp" + "/" + id + "/*");
+    xhr.send();
+    xhr.onload = async function () {
+        try {
+            var json = JSON.parse(xhr.responseText);
+            if (json.archived_snapshots.closest !== undefined) {
+                document.getElementById(s).innerHTML = "<a href='" + json.archived_snapshots.closest.url + "'>Archived</a>"
+            } else {
+                document.getElementById(s).innerHTML = "Not Archived"
+            }
+        } catch (error) {
+            setTimeout(function() {
+                getThumbnail(s);
+            }, 3000)
+        }
+    }
+}
+
+function geti3ViWebpThumbnail(s) {
+    var xhr = new XMLHttpRequest();
+    var id = getIDFromUrl(document.getElementById("urlInput").value);
+    xhr.open("GET", "https://archive.org/wayback/available?url=https://" + "i3" +".ytimg.com/" + "vi_webp" + "/" + id + "/*");
+    xhr.send();
+    xhr.onload = async function () {
+        try {
+            var json = JSON.parse(xhr.responseText);
+            if (json.archived_snapshots.closest !== undefined) {
+                document.getElementById(s).innerHTML = "<a href='" + json.archived_snapshots.closest.url + "'>Archived</a>"
+            } else {
+                document.getElementById(s).innerHTML = "Not Archived"
+            }
+        } catch (error) {
+            setTimeout(function() {
+                getThumbnail(s);
+            }, 3000)
+        }
+    }
+}
+
+function geti4ViWebpThumbnail(s) {
+    var xhr = new XMLHttpRequest();
+    var id = getIDFromUrl(document.getElementById("urlInput").value);
+    xhr.open("GET", "https://archive.org/wayback/available?url=https://" + "i4" +".ytimg.com/" + "vi_webp" + "/" + id + "/*");
+    xhr.send();
+    xhr.onload = async function () {
+        try {
+            var json = JSON.parse(xhr.responseText);
+            if (json.archived_snapshots.closest !== undefined) {
+                document.getElementById(s).innerHTML = "<a href='" + json.archived_snapshots.closest.url + "'>Archived</a>"
+            } else {
+                document.getElementById(s).innerHTML = "Not Archived"
+            }
+        } catch (error) {
+            setTimeout(function() {
+                getThumbnail(s);
+            }, 3000)
+        }
+    }
+}
+
+function getimgViWebpThumbnail(s) {
+    var xhr = new XMLHttpRequest();
+    var id = getIDFromUrl(document.getElementById("urlInput").value);
+    xhr.open("GET", "https://archive.org/wayback/available?url=https://" + "img" +".ytimg.com/" + "vi_webp" + "/" + id + "/*");
     xhr.send();
     xhr.onload = async function () {
         try {
