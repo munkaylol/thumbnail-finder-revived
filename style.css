@@ -19,9 +19,9 @@ td,th {
 }
 
 th:nth-child(odd) {
-    width:130px;
+    width:185px;
 }
 
 th:nth-child(even) {
-    width:145px;
+    width:185px;
 }
