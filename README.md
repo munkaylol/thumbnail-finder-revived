@@ -1,7 +1,7 @@
 # Thumb Finder Revived
 **By normanlol**
 
-**Fixed and reuploaded by JackABoylol**
+**Fixed, reuploaded, and added to by Munkaylol**
 
 > Website: https://munkaylol.github.io/thumb-finder-revived/
 
