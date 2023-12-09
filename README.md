@@ -11,4 +11,4 @@
 
 # Preview:
 
-![normal](https://i.imgur.com/1oyG0kJ.png)
+![normal](https://i.imgur.com/JHRHOoq.png)
