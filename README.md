@@ -3,7 +3,7 @@
 
 **Fixed, reuploaded, and added to by Munkaylol**
 
-> Website: https://munkaylol.github.io/thumb-finder-revived/
+> Website: https://munkaylol.github.io/thumbnail-finder-revived/
 
 > Original Website (Down): https://normanlol.github.io/thumb-finder/
 
