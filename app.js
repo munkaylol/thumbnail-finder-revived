@@ -10,7 +10,6 @@ function setupDarkMode() {
     const modeToggle = document.getElementById('modeToggle');
     const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
-    // Check for saved user preference, if any, on load
     if (localStorage.getItem("theme")) {
         if (localStorage.getItem("theme") === "dark") {
             document.body.classList.add("dark-mode");
@@ -19,11 +18,9 @@ function setupDarkMode() {
         document.body.classList.add("dark-mode");
     }
 
-    // Listen for Toggle Button
     modeToggle.addEventListener("click", function() {
         document.body.classList.toggle("dark-mode");
 
-        // If dark mode is selected
         if (document.body.classList.contains("dark-mode")) {
             localStorage.setItem("theme", "dark");
         } else {
@@ -266,8 +263,6 @@ function getimgyoutubeViWebpThumbnail(s) {
         }
     }
 }
-
-// ... (rest of the existing functions remain the same)
 
 function getIDFromUrl(string) {
     if (string.split("v=").length > 1) {
