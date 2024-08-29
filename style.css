@@ -44,7 +44,7 @@ body {
 }
 
 h1 {
-    color: var(--header-color);
+    color: var(--text-color);
     text-align: center;
     margin-top: 0px;
 }
@@ -73,6 +73,22 @@ button {
 
 button:hover {
     background-color: var(--button-hover);
+}
+
+@keyframes buttonClick {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.button-click {
+    animation: buttonClick 0.3s ease-in-out;
 }
 
 table {
