@@ -11,4 +11,11 @@
 
 # Preview:
 
-![normal](https://i.imgur.com/s7zLSN1.png)
+**Dark Mode:**
+![normal](https://i.imgur.com/wQKKa3n.png)
+
+**Light Mode:**
+![normal](https://i.imgur.com/pNHd0Jy.png)
+
+**Old Layout:**
+![normal](https://i.imgur.com/R9q4wKg.png)
