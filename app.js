@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("noScriptHide").style.display = "";
     setupDarkMode();
+    setupEnterKeyPress();
+    setupRetrieveButtonAnimation();
 });
 
 
@@ -30,7 +32,30 @@ function setupDarkMode() {
     });
 }
 
+function setupEnterKeyPress() {
+    const urlInput = document.getElementById("urlInput");
+    urlInput.addEventListener("keyup", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            document.getElementById("retrieveButton").click();
+        }
+    });
+}
+
+function setupRetrieveButtonAnimation() {
+    const retrieveButton = document.getElementById("retrieveButton");
+    retrieveButton.addEventListener("click", function() {
+        retrieveButton.classList.add("button-click");
+        setTimeout(() => {
+            retrieveButton.classList.remove("button-click");
+        }, 150);
+    });
+}
+
 function getAll() {
+    const retrieveButton = document.getElementById("retrieveButton");
+    retrieveButton.classList.add("button-click");
+    
     const subdomains = new Map([
         [['i', "i1", "i2", "i3", "i4", "img"], getThumbnail],
         [["i-vi_webp"], getiViWebpThumbnail],
@@ -45,9 +70,12 @@ function getAll() {
 
     for (const [subarr, func] of subdomains) {
         subarr.forEach(id => document.getElementById(id).innerHTML = "Testing...");
-
         subarr.forEach(func);
     }
+
+    setTimeout(() => {
+        retrieveButton.classList.remove("button-click");
+    }, 300);
 }
 
 function getThumbnail(s) {
