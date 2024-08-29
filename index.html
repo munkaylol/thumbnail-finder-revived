@@ -1,16 +1,41 @@
-<html>
-    <head>
-        <title>Thumb Finder Revived</title>
-        <link rel="icon" type="image/x-icon" href="https://github.com/munkaylol/thumb-finder-revived/blob/main/thumb-finder-icon-3-hq.png?raw=true">
-        <link href="style.css" rel="stylesheet">
-    </head>
-    <body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thumb Finder Revived</title>
+    <link id="styleSheet" rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <div class="container">
         <h1>Thumb Finder Revived</h1>
         <p>Find archived thumbnails via <a href="https://archive.org/help/wayback_api.php">Archive.org's API</a>.</p>
         <p><a href="https://github.com/munkaylol/thumb-finder-revived">Source code</a> - No attribution needed - <a href="https://github.com/normanlol/thumb-finder">Original source code</a></p>
         <p>By: <a href="https://github.com/normanlol">normanlol</a>. Fixed, reuploaded, and added to by: <a href="https://github.com/munkaylol">munkaylol</a>.</p>
+        <p><a href="old/">Revert to old layout.</a></p>
+
+        <button id="modeToggle" class="mode-toggle" aria-label="Toggle dark mode">
+            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+
         <div id="noScriptHide" style="display:none;">
-            <input autocomplete="off" id="urlInput" placeholder="Input URL or ID."><button onclick="getAll()">Retrieve URL</button>
+            <input type="text" id="urlInput" placeholder="Enter YouTube URL or Video ID">
+            <button onclick="getAll()">Retrieve URL</button>
+
             <table>
                 <tr>
                     <th>Image Server</th>
@@ -73,9 +98,14 @@
                     <th id="img-youtube-vi_webp">...</th>
                 </tr>
             </table>
+
             <p>Once you found one that was archived, click on one of the blue "Archived" links and right click the image and save it!</p>
         </div>
-        <noscript><b>This webapp requires JavaScript.</b></noscript>
-        <script src="app.js"></script>
-    </body>
+
+        <noscript>
+            <p><strong>This webapp requires JavaScript.</strong></p>
+        </noscript>
+    </div>
+
+</body>
 </html>
