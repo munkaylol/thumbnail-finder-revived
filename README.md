@@ -18,4 +18,4 @@
 ![normal](https://i.imgur.com/pNHd0Jy.png)
 
 **Old Layout:**
-![normal](https://i.imgur.com/R9q4wKg.png)
+![normal](https://i.imgur.com/hxjUD7a.png)
