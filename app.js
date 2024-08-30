@@ -10,21 +10,33 @@ function setupDarkMode() {
     const modeToggle = document.getElementById('modeToggle');
     const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
-    if (localStorage.getItem("theme")) {
-        if (localStorage.getItem("theme") === "dark") {
+    function setTheme(theme) {
+        if (theme === "dark") {
             document.body.classList.add("dark-mode");
+        } else {
+            document.body.classList.remove("dark-mode");
         }
-    } else if (prefersDarkScheme.matches) {
-        document.body.classList.add("dark-mode");
+        localStorage.setItem("theme", theme);
     }
 
-    modeToggle.addEventListener("click", function() {
-        document.body.classList.toggle("dark-mode");
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+        setTheme(savedTheme);
+    } else {
+        setTheme(prefersDarkScheme.matches ? "dark" : "light");
+    }
 
+    prefersDarkScheme.addListener((e) => {
+        if (!localStorage.getItem("theme")) {
+            setTheme(e.matches ? "dark" : "light");
+        }
+    });
+
+    modeToggle.addEventListener("click", function() {
         if (document.body.classList.contains("dark-mode")) {
-            localStorage.setItem("theme", "dark");
+            setTheme("light");
         } else {
-            localStorage.setItem("theme", "light");
+            setTheme("dark");
         }
     });
 }
