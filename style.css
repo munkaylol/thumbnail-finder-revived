@@ -13,13 +13,13 @@
 
 .dark-mode {
     --bg-color: #1a1a1a;
-    --text-color: #d9d9d9;
-    --container-bg: #2c2c2c;
+    --text-color: #cdcdcd;
+    --container-bg: #222;
     --header-color: #4a8ec0;
     --input-border: #444;
     --button-bg: #2980b9;
     --button-hover: #3498db;
-    --table-header-bg: #383838;
+    --table-header-bg: #222;
     --table-border: #444;
     --link-color: #5dade2;
 }
