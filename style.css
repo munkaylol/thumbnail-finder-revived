@@ -37,7 +37,7 @@ body {
 .container {
     max-width: 800px;
     margin: 0 auto;
-    background-color: #222;
+    background-color: var(--container-bg);
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 20px;
@@ -58,7 +58,7 @@ input[type="text"] {
     margin-bottom: 20px;
     border: 1px solid var(--input-border);
     border-radius: 4px;
-    background-color: #222;
+    background-color: var(--container-bg);
     color: var(--text-color);
 }
 
@@ -107,7 +107,7 @@ th, td {
 }
 
 th {
-    background-color: #222;
+    background-color: var(--table-header-bg);
     font-weight: bold;
 }
 
