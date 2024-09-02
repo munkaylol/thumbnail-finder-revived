@@ -12,7 +12,7 @@
 # Preview:
 
 **Dark Mode:**
-![normal](https://i.imgur.com/wQKKa3n.png)
+![normal](https://i.imgur.com/8DjCYQY.png)
 
 **Light Mode:**
 ![normal](https://i.imgur.com/pNHd0Jy.png)
